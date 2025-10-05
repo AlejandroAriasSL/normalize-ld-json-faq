@@ -1,0 +1,15 @@
+{
+    "name": "alejandroariassl/normalize-ld-json-faq",
+    "description": "WordPress plugin that normalizes JSON-LD FAQ generation across multiple visual builders.",
+    "type": "library",
+    "license": "GPL-2.0",
+    "autoload": {
+        "psr-4": {
+            "NormalizeLdJsonFAQ\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "php-stubs/wordpress-stubs": "dev-master"
+    }
+}
