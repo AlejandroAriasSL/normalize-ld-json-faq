@@ -10,6 +10,7 @@
     },
     "minimum-stability": "dev",
     "require-dev": {
-        "php-stubs/wordpress-stubs": "dev-master"
+        "php-stubs/wordpress-stubs": "dev-master",
+        "phpunit/phpunit": "11.5.x-dev"
     }
 }

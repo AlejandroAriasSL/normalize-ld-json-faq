@@ -1,0 +1,50 @@
+[
+  {
+    "elType": "section",
+    "elements": [
+      {
+        "elType": "column",
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "nested-accordion",
+            "elements": [
+              {
+                "elType": "widget",
+                "settings": {
+                  "_title": "¿Qué es este plugin?"
+                },
+                "elements": [
+                  {
+                    "elType": "widget",
+                    "widgetType": "text-editor",
+                    "settings": {
+                      "editor": "<p>Este plugin genera automáticamente JSON-LD de tipo FAQ.</p><p>Compatible con Elementor.</p>"
+                    },
+                    "elements": []
+                  }
+                ]
+              },
+              {
+                "elType": "widget",
+                "settings": {
+                  "_title": "¿Cómo se instala?"
+                },
+                "elements": [
+                  {
+                    "elType": "widget",
+                    "widgetType": "text-editor",
+                    "settings": {
+                      "editor": "<p>Descarga el plugin y actívalo desde el panel de WordPress.</p>"
+                    },
+                    "elements": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

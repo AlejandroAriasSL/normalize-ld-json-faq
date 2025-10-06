@@ -1,5 +1,7 @@
 # Normalize LD-JSON FAQ
 
+![PHPUnit](https://github.com/alejandroariassl/normalize-ld-json-faq/actions/workflows/phpunit.yml/badge.svg)
+
 Genera automáticamente JSON-LD para FAQs a partir de acordeones en WordPress.  
 
 ## Instalación
