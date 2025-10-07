@@ -9,11 +9,12 @@ License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
 */
 
+use NormalizeLdJsonFAQ\BuilderStrategy;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 require_once __DIR__ . '/vendor/autoload.php';
-
-use NormalizeLdJsonFAQ\Adapters\ElementorAdapter;
+require_once __DIR__ . '/src/Hooks/AfterSave.php';
 
 add_action('wp_head', 'normalize_ldjson');
 function normalize_ldjson() {
@@ -21,10 +22,16 @@ function normalize_ldjson() {
 
     global $post;
 
-    $adapter = new ElementorAdapter();
-    $qas = $adapter->extractFaq($post->ID);
+    $adapter = BuilderStrategy::getActiveAdapter();
+    $qas = [];
 
-    if (!$qas) return;
+    if ($adapter)
+    {
+        $adapter->enqueueScript();
+        $qas = $adapter->extractFaq($post->ID);
+    }
+
+    if (empty($qas)) return;
 
     $mainEntity = array_map(function($qa){
         return [

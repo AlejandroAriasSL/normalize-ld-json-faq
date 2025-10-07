@@ -1,9 +1,10 @@
 <?php
 namespace NormalizeLdJsonFAQ\Adapters;
 
+use NormalizeLdJsonFAQ\Adapter;
 use NormalizeLdJsonFAQ\Utils\HTMLExtractor;
 
-class ElementorAdapter {
+class ElementorAdapter implements Adapter {
 
     public function extractFaq($post_id): array
     {
@@ -16,6 +17,19 @@ class ElementorAdapter {
         $qas = [];
         $this->parseElements($data, $qas);
         return $qas;
+    }
+
+    public function enqueueScript(): void 
+    {
+        add_action('elementor/editor/after_enqueue_scripts', function() {
+            wp_enqueue_script(
+                'my-elementor-editor',
+                plugin_dir_url(__FILE__) . '/../Runtime/onEdit-elementor.js',
+                [],
+                '1.0',
+                true
+            );
+        });
     }
 
     /**
